@@ -3,9 +3,9 @@
     width: 400px;
     margin: 50px auto;
     padding: 20px;
-    border: 2px solid tan;
+    border: 2px solid #007bff;
     border-radius: 10px;
-    background-color: tan;
+    background-color: #007bff;
 }
 
 /*Profile picture*/
@@ -22,15 +22,41 @@
 .info-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
 
-/*Contact box and company box*/
-.contact-box, .company-box {
-    width: 90%;
-    padding: 10px;
-    background-color: tan;
+/*Contact box and company box and links box*/
+.contact-box, .company-box, .links-box {
+    width: 100%;
+    padding: 5px;
+    margin: 2px 0;
+    background-color: #007bff;
     text-align: center;
 }
 
+
+/*Media query for desktop (768 and up)*/
+@media screen and (min-width: 768px) {
+    .profile-article {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+}
+
+.profile-pic {
+        margin-right: 20px;
+        transform: translateX(-20px)
+    }
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-box, .company-box {
+        width: 100%;
+    }
+}
