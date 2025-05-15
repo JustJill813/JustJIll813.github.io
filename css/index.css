@@ -1,11 +1,41 @@
+body {
+    background-color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Article annimation - I looked this up on the internet and it works well*/
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.profile-article {
+    animation: scaleUp 0.5s ease-in-out;
+}
+
 /*Styles for article container*/
 .profile-article {
-    width: 400px;
+    width: 600px;
     margin: 50px auto;
-    padding: 20px;
-    border: 2px solid #007bff;
-    border-radius: 10px;
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
     background-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/*Profile name*/
+.profile-name {
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 /*Profile picture*/
@@ -16,6 +46,12 @@
     margin: 0 auto 20px;
     display: block;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/*Profile picture hover effect*/
+.profile-pic:hover {
+    transform: scale(1.05);
 }
 
 /*Flex container for boxes*/
@@ -24,6 +60,24 @@
     flex-direction: column;
     gap: 5px;
     align-items: center;
+}
+
+/*Clickable links*/
+.links-box {
+   display: inline-block;
+   padding: 10px 15px;
+   background-color: #fff'
+   color: #007bff;
+   border-radius: 5px;
+   text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/*Add hover effect to items in links box*/
+.links-box a:hover {
+    background-color: #007bff;
+    color: #fff;
 }
 
 /*Contact box and company box and links box*/
@@ -35,28 +89,56 @@
     text-align: center;
 }
 
-
 /*Media query for desktop (768 and up)*/
 @media screen and (min-width: 768px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin:0;
+    }
+
     .profile-article {
+        width: 700px;
+        padding: 40px;
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;  
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding-left: 20px;
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
 
 .profile-pic {
+    display: block;
+    margin: 0 auto;
         margin-right: 20px;
-        transform: translateX(-20px)
+        transform: translateX(0px)
+    }
+    .profile-pic:hover {
+        transform: scale(1.08);
     }
 
-    .info-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .contact-box, .company-box {
-        width: 100%;
-    }
 }
