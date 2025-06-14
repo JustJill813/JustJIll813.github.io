@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const projectSection = document.querySelector("main");
 
-    fetch("https://api.github.com/users/JustJill813/repos")
+    fetch("https://api.github.com/users/JustJill813/repos?sort=updated&direction=desc")
         .then(response => response.json())
         .then(repos => {
             repos.forEach(repo => {
